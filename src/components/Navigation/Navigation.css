@@ -1,0 +1,36 @@
+.Navigation {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    flex-grow: 1 1;
+    /* border-right: 1px solid rgba(105, 105, 105, 0.634); */
+    background-color: rgba(49, 49, 49, 0.356);
+}
+
+.Navigation ul {
+    width: 100%;
+    height: 100%;
+    /* border: 1px solid blue; */
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+}
+
+.Navigation li {
+    list-style: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+}
+
+.Navigation li:hover {
+    color: white;
+}
+
+.Navigation .nav-link {
+    text-decoration: none;
+    color: inherit;
+}

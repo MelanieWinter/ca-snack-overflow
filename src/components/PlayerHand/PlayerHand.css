@@ -1,0 +1,9 @@
+.PlayerHand {
+    padding: 1rem;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+    /* max-width: 38rem; */
+    /* border: 1px solid red; */
+}

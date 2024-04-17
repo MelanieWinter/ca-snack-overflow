@@ -1,8 +1,8 @@
 // Player roles
-type PlayerRole = 'Host' | 'Player' | 'Spectator'
+export type PlayerRole = 'Host' | 'Player' | 'Spectator'
 
 // Represents a player
-type CAHPlayer = {
+export type CAHPlayer = {
     player_name: string
     role: PlayerRole
     white: CAHCardWhite[]
@@ -10,20 +10,20 @@ type CAHPlayer = {
 }
 
 // A CAH white card 
-type CAHCardWhite = {
+export type CAHCardWhite = {
     text: string
     pack: number
 }
 
 // A CAH black card
-type CAHCardBlack = {
+export type CAHCardBlack = {
     text: string
     pick: number
     pack: number
 }
 
 // A CAH pack 
-type CAHCardSet = {
+export type CAHCardSet = {
     name: string
     description?: string
     official: boolean
@@ -32,7 +32,7 @@ type CAHCardSet = {
 }
 
 // The game master
-type CAHGame = {
+export type CAHGame = {
     game_name: string
     white: CAHCardWhite[]
     black: CAHCardBlack[]

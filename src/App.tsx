@@ -55,6 +55,14 @@ function App() {
     // }
   }, [])
 
+  // const updateNewGameRequest = () => {
+  //   console.log("Player:", player)
+  //   return {
+  //       name: game.game_name,
+  //       host: player
+  //   }
+  // }
+
   return (
     <>
       <div className='App'>
@@ -79,6 +87,7 @@ function App() {
                   setGame={setGame}
                   socket={socket}
                   sendMessage={sendMessage}
+                  // updateNewGameRequest={updateNewGameRequest}
                 />
               }
             />

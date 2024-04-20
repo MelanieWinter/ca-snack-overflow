@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import * as cahTypes from '../../utilities/cah-types';
 import './GameLobby.css';
-import NewGameRequest from '../../components/NewGameRequest/NewGameRequest';
+// import NewGameRequest from '../../components/NewGameRequest/NewGameRequest';
 
 type GameLobbyProps = {
     playerRole: cahTypes.PlayerRole;
@@ -20,7 +20,6 @@ export default function GameLobby({ playerRole, setPlayerRole, player, setPlayer
         gameName: '',
         gameActive: false,
     })
-    
 
     const [error, setError] = useState('')
 
@@ -42,35 +41,38 @@ export default function GameLobby({ playerRole, setPlayerRole, player, setPlayer
     }
 
     const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-        evt.preventDefault()
+        evt.preventDefault();
         try {
-            gameSettings.gameActive = true
-            setPlayer({
-                ...player,
-                player_name: gameSettings.playerName,
-                role: gameSettings.playerRole,
-            })
-            setPlayerRole(gameSettings.playerRole)
+            gameSettings.gameActive = true;
             setGame({
                 ...game,
                 game_name: gameSettings.gameName,
                 game_active: gameSettings.gameActive,
-            })
-            console.log("Player and role updated successfully.")
-            sendMessage(JSON.stringify(updateNewGameRequest()))
+            });
+            setPlayer({
+                ...player,
+                player_name: gameSettings.playerName,
+                role: gameSettings.playerRole,
+            });
+            console.log("Player and role updated successfully.");
         } catch (error) {
-            console.error("Error updating player and role:", error)
+            console.error("Error updating player and role:", error);
         }
     }
 
+    useEffect(() => {
+        if (player.player_name !== '') {
+            sendMessage(JSON.stringify(updateNewGameRequest()))
+        }
+    }, [player])
+
     const updateNewGameRequest = () => {
         console.log("Player:", player)
-        return {
+        const newGameRequest = {
             name: gameSettings.gameName,
-            host: {
-                name: gameSettings.playerName
-            },
+            host: player
         }
+        return newGameRequest
     }
 
     return (

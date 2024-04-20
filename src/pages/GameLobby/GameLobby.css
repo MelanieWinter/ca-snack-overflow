@@ -1,16 +1,45 @@
 .GameLobby {
+    width: 100%;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    /* justify-content: center; */
     align-items: center;
-    gap: 2rem;
+    gap: 0rem;
     padding: 2rem;
+    /* border: 1px solid red; */
 }
 
-.GameLobby .random-card-picker {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 2rem;
+.GameLobby h1 {
+    /* border: 1px solid blue; */
+    margin: 0;
+    padding-bottom: 1rem;
+}
 
+.GameLobby .setupForm {
+    width: 20rem;
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+}
+
+.GameLobby .setupForm label {
+    display: flex;
+    gap: .5rem;
+    justify-content: space-between;
+}
+
+.GameLobby .setupForm span {
+    width: 8rem;
+    text-align: left;
+}
+
+.GameLobby .setupForm input,
+.GameLobby .setupForm select {
+    /* width: 30px; */
+    display: flex;
+    flex-grow: 1;
+}
+
+.GameLobby .setupForm button {
+    margin: 1rem;
 }

@@ -7,20 +7,20 @@ export type CAHPlayer = {
     role: PlayerRole
     white: CAHCardWhite[]
     black: CAHCardBlack[]
-}
+};
 
 // A CAH white card 
 export type CAHCardWhite = {
     text: string
     pack: number
-}
+};
 
 // A CAH black card
 export type CAHCardBlack = {
     text: string
     pick: number
     pack: number
-}
+};
 
 // A CAH pack 
 export type CAHCardSet = {
@@ -41,4 +41,5 @@ export type CAHGame = {
     game_active: boolean
     players: CAHPlayer[]
     current_black?: CAHCardBlack
-}
+};
+

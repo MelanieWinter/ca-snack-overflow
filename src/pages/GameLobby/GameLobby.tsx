@@ -1,16 +1,17 @@
-import React, { useEffect, useState } from 'react';
-import * as cahTypes from '../../utilities/cah-types';
-import './GameLobby.css';
-// import NewGameRequest from '../../components/NewGameRequest/NewGameRequest';
+import React, { useEffect, useState } from 'react'
+import * as cahTypes from '../../utilities/cah-types'
+import './GameLobby.css'
+import SocketMessage from '../../components/SocketMessage/SocketMessage'
 
 type GameLobbyProps = {
-    playerRole: cahTypes.PlayerRole;
-    setPlayerRole: React.Dispatch<React.SetStateAction<cahTypes.PlayerRole>>;
-    player: cahTypes.CAHPlayer;
-    setPlayer: React.Dispatch<React.SetStateAction<cahTypes.CAHPlayer>>;
-    game: cahTypes.CAHGame;
-    setGame: React.Dispatch<React.SetStateAction<cahTypes.CAHGame>>;
+    playerRole: cahTypes.PlayerRole
+    setPlayerRole: React.Dispatch<React.SetStateAction<cahTypes.PlayerRole>>
+    player: cahTypes.CAHPlayer
+    setPlayer: React.Dispatch<React.SetStateAction<cahTypes.CAHPlayer>>
+    game: cahTypes.CAHGame
+    setGame: React.Dispatch<React.SetStateAction<cahTypes.CAHGame>>
     socket: WebSocket
+    sendMessage: (message: string) => void
 }
 
 export default function GameLobby({ playerRole, setPlayerRole, player, setPlayer, game, setGame, socket, sendMessage }: GameLobbyProps) {
@@ -41,30 +42,24 @@ export default function GameLobby({ playerRole, setPlayerRole, player, setPlayer
     }
 
     const handleSubmit = (evt: React.FormEvent<HTMLFormElement>) => {
-        evt.preventDefault();
+        evt.preventDefault()
         try {
-            gameSettings.gameActive = true;
+            gameSettings.gameActive = true
             setGame({
                 ...game,
                 game_name: gameSettings.gameName,
                 game_active: gameSettings.gameActive,
-            });
+            })
             setPlayer({
                 ...player,
                 player_name: gameSettings.playerName,
                 role: gameSettings.playerRole,
-            });
-            console.log("Player and role updated successfully.");
+            })
+            console.log("Player and role updated successfully.")
         } catch (error) {
-            console.error("Error updating player and role:", error);
+            console.error("Error updating player and role:", error)
         }
     }
-
-    useEffect(() => {
-        if (player.player_name !== '') {
-            sendMessage(JSON.stringify(updateNewGameRequest()))
-        }
-    }, [player])
 
     const updateNewGameRequest = () => {
         console.log("Player:", player)
@@ -75,12 +70,22 @@ export default function GameLobby({ playerRole, setPlayerRole, player, setPlayer
         return newGameRequest
     }
 
+    useEffect(() => {
+        if (player.player_name !== '') {
+            // sendMessage(JSON.stringify(updateNewGameRequest()))
+            sendMessage('THIS IS A STRING')
+        }
+    }, [player])
+
     return (
         <section className='GameLobby'>
             <>
                 { game.game_active ?
                     <>
                         <h2>Hey, {player.player_name}, you are signed up as a {playerRole}!</h2>
+                        {/* <SocketMessage 
+                            socket={socket} 
+                        /> */}
                     </> :
                     <h1>Game Lobby</h1>
                 }

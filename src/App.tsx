@@ -48,20 +48,23 @@ function App() {
       const msg: Message = event.data
       addMessages(msg)
     }
-
-    // Cleanup function
-    // return () => {
-    //   socket.close()
-    // }
   }, [])
 
-  // const updateNewGameRequest = () => {
-  //   console.log("Player:", player)
-  //   return {
-  //       name: game.game_name,
-  //       host: player
-  //   }
-  // }
+  useEffect(() => {
+    const handleMessage = (event: MessageEvent) => {
+      console.log("Message from server ", event.data)
+    }
+
+    const intervalId = setInterval(() => {
+      socket.addEventListener("message", handleMessage)
+      console.log('im running!')
+    }, 1000)
+  
+    return () => {
+      clearInterval(intervalId)
+    }
+  }, [])
+  
 
   return (
     <>

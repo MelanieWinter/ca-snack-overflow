@@ -7,7 +7,8 @@ import Navigation from './components/Navigation/Navigation'
 import * as cahTypes from './utilities/cah-types'
 import './App.css'
 
-const socket = new WebSocket("ws://127.0.0.1:8080")
+// const socket = new WebSocket("ws://127.0.0.1:3030")
+const socket = new WebSocket("ws://127.0.0.1:3030/chat")
 
 type Message = string
 
@@ -51,32 +52,47 @@ function App() {
   }, [])
 
   useEffect(() => {
-    const handleMessage = (event: MessageEvent) => {
-      console.log("Message from server ", event.data)
-    }
-
-    const intervalId = setInterval(() => {
-      socket.addEventListener("message", handleMessage)
-      console.log('im running!')
-    }, 1000)
+    socket.addEventListener("open", (event) => {
+      socket.send("Hello Server!");
+    });
   
-    return () => {
-      clearInterval(intervalId)
-    }
-  }, [])
+    function handleMessage(event) {
+      const message = event.data;
+      if (isJsonString(message)) {
+          // Handle JSON message
+          const jsonMessage = JSON.parse(message);
+          // Your JSON message handling logic here
+      } else {
+          // Handle text message
+          // Your text message handling logic here
+          console.log("Received text message:", message);
+      }
+  }
+  
+  function isJsonString(str) {
+      try {
+          JSON.parse(str);
+      } catch (e) {
+          return false;
+      }
+      return true;
+  }
+  
+  
+    socket.addEventListener("message", handleMessage);
+    console.log('I am running!');
+  }, []);
+  
   
 
   return (
     <>
       <div className='App'>
-        <aside>
+        <nav>
           <Navigation />
-        </aside>
+        </nav>
 
         <main>
-          <div>
-            <button onClick={() => sendMessage()}>Send</button>
-          </div>
           <Routes>
             <Route 
               path='/game-lobby'

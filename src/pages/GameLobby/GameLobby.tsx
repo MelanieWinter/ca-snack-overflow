@@ -1,7 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import * as cahTypes from '../../utilities/cah-types'
 import './GameLobby.css'
-import SocketMessage from '../../components/SocketMessage/SocketMessage'
 
 type GameLobbyProps = {
     playerRole: cahTypes.PlayerRole
@@ -72,8 +71,9 @@ export default function GameLobby({ playerRole, setPlayerRole, player, setPlayer
 
     useEffect(() => {
         if (player.player_name !== '') {
-            // sendMessage(JSON.stringify(updateNewGameRequest()))
-            sendMessage('THIS IS A STRING')
+            const terminationChar = '\u0000'
+
+            sendMessage(JSON.stringify(updateNewGameRequest()) + terminationChar)
         }
     }, [player])
 

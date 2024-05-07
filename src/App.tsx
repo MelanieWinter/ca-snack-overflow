@@ -2,10 +2,12 @@ import { useEffect, useState } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import Homepage from './pages/Homepage/Homepage'
 import GameRoom from './pages/GameRoom/GameRoom'
+import Game from './pages/Game/Game'
 import GameLobby from './pages/GameLobby/GameLobby'
 import Navigation from './components/Navigation/Navigation'
 import * as cahTypes from './utilities/cah-types'
 import './App.css'
+import CurrentGames from './pages/CurrentGames/CurrentGames'
 
 // const socket = new WebSocket("ws://127.0.0.1:3030")
 const socket = new WebSocket("ws://127.0.0.1:3030/chat")
@@ -95,6 +97,12 @@ function App() {
         <main>
           <Routes>
             <Route 
+              path='/current-games'
+              element={
+                <CurrentGames />
+              }
+            />
+            <Route 
               path='/game-lobby'
               element={
                 <GameLobby 
@@ -112,7 +120,8 @@ function App() {
             />
             <Route 
               path='/game-room'
-              element={<GameRoom />}
+              // element={<GameRoom />}
+              element={<Game />}
             />
             <Route 
               path='/'

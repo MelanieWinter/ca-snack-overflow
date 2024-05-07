@@ -1,5 +1,5 @@
 import './Card.css'
-export default function Card({ cardContent, color, handleShowResults, setChosenWhiteCard }) {
+export default function Card({ cardContent, color, handleShowResults, setChosenWhiteCard, isExploded }) {
 
     const handleOnMouseMove = e => {
         const { currentTarget: target } = e
@@ -25,7 +25,7 @@ export default function Card({ cardContent, color, handleShowResults, setChosenW
     }
 
     return (
-        <div className='Card' onClick={handleResults}>
+        <div className={`Card ${isExploded ? 'card-explosion' : ''}`} onClick={handleResults}>
             <div className='card-border'></div>
             <div 
                 className='card-content'

@@ -34,32 +34,32 @@
     transition: transform 800ms cubic-bezier(.05,.43,.25,.95);
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(1) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(1) {
     transform: translate(-200%, -70%) rotate(10deg);
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(2) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(2) {
     transform: translate(95%, 90%) rotate(-10deg);
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(3) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(3) {
     transform: translate(-100%, -30%) rotate(-15deg);
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(4) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(4) {
     transform: translate(100%, -40%) rotate(5deg);
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(5) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(5) {
     transform: translate(-130%, 60%) rotate(2deg);
 
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(6) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(6) {
     transform: translate(190%, -80%) rotate(-15deg);
 }
 
-.Homepage .cards-animation-div:hover .Card:nth-child(7) {
+.Homepage .cards-animation-div .Card.card-explosion:nth-child(7) {
     transform: translate(0%, 30%) rotate(10deg);
 }
 

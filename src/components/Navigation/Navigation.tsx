@@ -11,6 +11,11 @@ export default function Navigation() {
                     </Link>
                 </li>
                 <li>
+                    <Link to={'/current-games'} className='nav-link'>
+                        Current Games
+                    </Link>
+                </li>
+                <li>
                     <Link to={'/game-lobby'} className='nav-link'>
                         Lobby
                     </Link>

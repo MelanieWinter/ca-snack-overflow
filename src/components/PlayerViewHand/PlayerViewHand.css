@@ -1,0 +1,106 @@
+.PlayerViewHand {
+
+}
+
+.PlayerViewHand .player-view-hand-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 15rem; 
+    /* width: 100%; */
+    /* border: 1px solid lime; */
+    position: relative;
+}
+
+.PlayerViewHand .player-view-hand-container .Card {
+    border: 1px solid rgba(92, 92, 92, 0.758);
+    position: absolute;
+}
+
+.PlayerViewHand .player-view-hand-container .Card {
+    transform: translateY(-50%);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(1) {
+    transform: translateX(-25%) rotate(-9deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(2) {
+    transform: translateX(-20%) rotate(-7deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(3) {
+    transform: translateX(-15%) rotate(-5deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(4) {
+    transform: translateX(-10%) rotate(-3deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(5) {
+    transform: translateX(-5%) rotate(-1deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(6) {
+    transform: rotate(0deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(7) {
+    transform: translateX(5%) rotate(1deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(8) {
+    transform: translateX(10%) rotate(3deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(9) {
+    transform: translateX(15%) rotate(7deg);
+}
+
+.PlayerViewHand .player-view-hand-container .Card:nth-child(10) {
+    transform: translateX(20%) rotate(9deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card {
+    transition: transform 0.3s ease-in-out;
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(1) {
+    transform: translateX(-100%) rotate(-10deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(2) {
+    transform: translateX(-70%) rotate(-7deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(3) {
+    transform: translateX(-40%) rotate(-4deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(4) {
+    transform: translateX(-10%) rotate(-1deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(5) {
+    transform: translateX(20%) rotate(2deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(6) {
+    transform: translateX(50%) rotate(5deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(7) {
+    transform: translateX(80%) rotate(8deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(8) {
+    transform: translateX(110%) rotate(11deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(9) {
+    transform: translateX(140%) rotate(14deg);
+}
+
+.PlayerViewHand .player-view-hand-container:hover .Card:nth-child(10) {
+    transform: translateX(170%) rotate(17deg);
+}

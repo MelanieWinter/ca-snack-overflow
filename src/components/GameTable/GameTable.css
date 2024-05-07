@@ -1,0 +1,14 @@
+.GameTable {
+
+}
+
+.GameTable .table-container {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+}
+
+.GameTable .table-container .Card {
+    position: relative;
+}

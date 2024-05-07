@@ -1,0 +1,49 @@
+.GameOtherPlayer {
+
+}
+
+.GameOtherPlayer .other-player-container {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.GameOtherPlayer .other-player-avatar {
+    width: 4rem;
+    aspect-ratio: 1/1;
+    border: 1px solid lightgrey;
+    border-radius: 100px;
+    background-color: rgba(59, 59, 59, 0.815);
+    font-size: .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(211, 211, 211, 0.5);
+}
+
+.GameOtherPlayer .other-player-hand {
+    margin-top: -1.75rem;
+    width: 5rem;
+    aspect-ratio: 5/3;
+    border: 1px solid lightgrey;
+    background-color: rgba(59, 59, 59, 0.815);
+}
+
+.GameOtherPlayer .other-player-won {
+    width: 1.5rem;
+    aspect-ratio: 1/1;
+    border: 1px solid rgb(211, 211, 211);
+    border-radius: 100px;
+    background-color: rgba(43, 179, 43, 0.815);
+    font-size: .75rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgba(0, 0, 0, 0.5);
+    position: absolute;
+    bottom: -.5rem;
+    right: -.5rem;
+}

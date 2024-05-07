@@ -20,7 +20,9 @@
     justify-content: center;
     align-items: center;
     cursor: pointer;
-    margin-bottom: 1rem; /* Add spacing between cards */
+}
+
+.Homepage .Card {
     position: absolute;
     animation: randomMovement 5s infinite linear;
 }

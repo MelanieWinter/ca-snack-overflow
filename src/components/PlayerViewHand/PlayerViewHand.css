@@ -1,5 +1,5 @@
 .PlayerViewHand {
-
+    margin-bottom: -10rem;
 }
 
 .PlayerViewHand .player-view-hand-container {
@@ -18,89 +18,91 @@
 }
 
 .PlayerViewHand .player-view-hand-container .Card {
-    transform: translateY(-50%);
+    transform: translateY(-60%);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(1) {
-    transform: translateX(-25%) rotate(-9deg);
+    transform: translateX(-100%) rotate(-9deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(2) {
-    transform: translateX(-20%) rotate(-7deg);
+    transform: translateX(-80%) rotate(-7deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(3) {
-    transform: translateX(-15%) rotate(-5deg);
+    transform: translateX(-60%) rotate(-5deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(4) {
-    transform: translateX(-10%) rotate(-3deg);
+    transform: translateX(-40%) rotate(-3deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(5) {
-    transform: translateX(-5%) rotate(-1deg);
+    transform: translateX(-20%) rotate(-1deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(6) {
-    transform: rotate(0deg);
+    transform: translateX(20%) rotate(0deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(7) {
-    transform: translateX(5%) rotate(1deg);
+    transform: translateX(40%) rotate(1deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(8) {
-    transform: translateX(10%) rotate(3deg);
+    transform: translateX(60%) rotate(3deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(9) {
-    transform: translateX(15%) rotate(7deg);
+    transform: translateX(80%) rotate(7deg);
 }
 
 .PlayerViewHand .player-view-hand-container .Card:nth-child(10) {
-    transform: translateX(20%) rotate(9deg);
+    transform: translateX(100%) rotate(9deg);
 }
 
+
+/* HOVER STATE FOR PLAYER HAND CARDS */
 .PlayerViewHand .player-view-hand-container:hover .Card {
     transition: transform 0.3s ease-in-out;
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(1) {
-    transform: translateX(-100%) rotate(-10deg);
+    transform: translateX(-240%) rotate(-17deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(2) {
-    transform: translateX(-70%) rotate(-7deg);
+    transform: translateX(-180%) rotate(-14deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(3) {
-    transform: translateX(-40%) rotate(-4deg);
+    transform: translateX(-120%) rotate(-9deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(4) {
-    transform: translateX(-10%) rotate(-1deg);
+    transform: translateX(-70%) rotate(-7deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(5) {
-    transform: translateX(20%) rotate(2deg);
+    transform: translateX(-30%) rotate(-3deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(6) {
-    transform: translateX(50%) rotate(5deg);
+    transform: translateX(30%) rotate(3deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(7) {
-    transform: translateX(80%) rotate(8deg);
+    transform: translateX(70%) rotate(7deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(8) {
-    transform: translateX(110%) rotate(11deg);
+    transform: translateX(120%) rotate(9deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(9) {
-    transform: translateX(140%) rotate(14deg);
+    transform: translateX(180%) rotate(14deg);
 }
 
 .PlayerViewHand .player-view-hand-container:hover .Card:nth-child(10) {
-    transform: translateX(170%) rotate(17deg);
+    transform: translateX(240%) rotate(17deg);
 }

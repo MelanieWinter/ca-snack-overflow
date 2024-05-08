@@ -1,10 +1,10 @@
-import './GameOtherplayer.css'
+import './GameOtherPlayer.css'
 
-export default function GameOtherplayer() {
+export default function GameOtherPlayer({ playerName }) {
     return (
         <div className='GameOtherPlayer'>
             <div className='other-player-container'>
-                <div className='other-player-avatar'>USER</div>
+                <div className='other-player-avatar'>{playerName}</div>
                 <div className='other-player-hand'></div>
                 <div className='other-player-won'>
                     <span>3</span>

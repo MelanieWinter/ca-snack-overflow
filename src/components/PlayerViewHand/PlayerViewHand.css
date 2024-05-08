@@ -111,4 +111,6 @@
 .PlayerViewHand .player-view-hand-container .Card:hover {
     margin-bottom: 6rem;
     border: 1px solid red;
+    z-index: 1000;
+    background-color: rgba(172, 171, 171, 0.9);
 }

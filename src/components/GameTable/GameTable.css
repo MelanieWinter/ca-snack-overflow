@@ -1,5 +1,7 @@
 .GameTable {
-
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
 }
 
 .GameTable .table-container {
@@ -11,4 +13,40 @@
 
 .GameTable .table-container .Card {
     position: relative;
+}
+
+.GameTable .view-buttons {
+    display: flex;
+    gap: .75rem;
+    justify-content: center;
+}
+
+.GameTable .view-buttons button {
+    cursor: pointer;
+}
+
+.GameTable .view-buttons button:hover {
+    outline: 1px solid rgb(255, 255, 255);
+    outline-offset: 2px;
+}
+
+.GameTable .host-choice-div {
+    position: relative;
+}
+
+.GameTable .host-choice-div span {
+    position: absolute;
+    bottom: 1rem;
+    left: 3.25rem;
+    display: none;
+    color: rgba(255, 255, 255, 0.5);
+}
+
+.GameTable .host-choice-div:hover span {
+    display: block;
+}
+
+.GameTable .host-choice-div:hover .Card {
+    outline: 1px solid rgba(255, 255, 255, 0.5);
+    outline-offset: 4px;
 }

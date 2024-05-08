@@ -2,10 +2,8 @@ import { useState } from 'react'
 import Card from '../Card/Card'
 import './GameTable.css'
 
-export default function GameTable({ currentPlayers }) {
-    const [tableView, setTableView] = useState('threeDeck')
-
-    // tableView options: threeDeck, playerChoice, hostChoice, winningCard  
+export default function GameTable({ tableView, setTableView, currentPlayers, draggingCard }) {
+    const [playerChoicActive, setPlayerChoiceActive] = useState(false)
 
     function handleTableViewChange(newView) {
         setTableView(newView)
@@ -22,10 +20,12 @@ export default function GameTable({ currentPlayers }) {
                     </>
                 )}
                 {tableView === 'playerChoice' && (
-                    <>
+                    // Make all of these things into their own components
+                    <div className='PlayerChoice'>
                         <Card cardContent={"Black Card"} />
                         <Card cardContent={"Space For Player's Chosen  White Card"} />
-                    </>
+                        <AddCard />
+                    </div>
                 )}
                 {tableView === 'hostChoice' && (
                     <>

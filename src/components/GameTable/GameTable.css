@@ -50,3 +50,8 @@
     outline: 1px solid rgba(255, 255, 255, 0.5);
     outline-offset: 4px;
 }
+
+.GameTable .PlayerChoice {
+    display: flex;
+    gap: 1.5rem;
+}

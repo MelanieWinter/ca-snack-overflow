@@ -114,3 +114,11 @@
     z-index: 1000;
     background-color: rgba(172, 171, 171, 0.9);
 }
+
+.PlayerViewHand .player-view-hand-container .Card {
+    cursor: grab;
+}
+
+.PlayerViewHand .player-view-hand-container .Card:active {
+    cursor: grabbing;
+}

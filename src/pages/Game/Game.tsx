@@ -5,6 +5,11 @@ import GamePlayerView from '../../components/GamePlayerView/GamePlayerView'
 import './Game.css'
 
 export default function Game() {
+    const [tableView, setTableView] = useState('threeDeck')
+
+    // tableView options: threeDeck, playerChoice, hostChoice, winningCard  
+
+    const [draggingCard, setDraggingCard] = useState(null)
 
     const [currentPlayers, setCurrentPlayers] = useState([
         {
@@ -35,11 +40,18 @@ export default function Game() {
                 </div>
                 <div className='game-table'>
                     <GameTable 
+                        tableView={tableView}
+                        setTableView={setTableView}
                         currentPlayers={currentPlayers}
+                        draggingCard={draggingCard}
                     />
                 </div>
                 <div className='game-player-view'>
-                    <GamePlayerView />
+                    <GamePlayerView 
+                        tableView={tableView}
+                        draggingCard={draggingCard}
+                        setDraggingCard={setDraggingCard}
+                    />
                 </div>
             </div>
         </section>

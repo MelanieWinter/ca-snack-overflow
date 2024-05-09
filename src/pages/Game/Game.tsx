@@ -30,6 +30,12 @@ export default function Game() {
         },
     ])
 
+    const [dropDiv, setDropDiv] = useState([])
+
+    function addCardToDropDiv(id) {
+        console.log('something', id)
+    }
+    
     return (
         <section className='Game'>
             <div className='game-container'>
@@ -44,6 +50,9 @@ export default function Game() {
                         setTableView={setTableView}
                         currentPlayers={currentPlayers}
                         draggingCard={draggingCard}
+                        dropDiv={dropDiv}
+                        setDropDiv={setDropDiv}
+                        addCardToDropDiv={addCardToDropDiv}
                     />
                 </div>
                 <div className='game-player-view'>
@@ -51,6 +60,8 @@ export default function Game() {
                         tableView={tableView}
                         draggingCard={draggingCard}
                         setDraggingCard={setDraggingCard}
+                        dropDiv={dropDiv}
+                        setDropDiv={setDropDiv}
                     />
                 </div>
             </div>

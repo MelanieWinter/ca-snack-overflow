@@ -1,31 +1,46 @@
+import { useDrag } from 'react-dnd'
 import './Card.css'
-export default function Card({ cardContent, color, handleShowResults, setChosenWhiteCard, isExploded, draggable }) {
 
-    const handleOnMouseMove = e => {
-        const { currentTarget: target } = e
+export default function Card({ cardContent, color, handleShowResults, setChosenWhiteCard, isExploded, draggable, id }) {
+    const [{ isDragging }, drag] = useDrag(() => ({
+        type: 'card',
+        item: {id: id},
+        collect: (monitor) => ({
+            isDragging: !!monitor.isDragging()
+        }),
+    }))
 
-        const rect = target.getBoundingClientRect(),
-            x = e.clientX - rect.left,
-            y = e.clientY - rect.top
-            console.log(y, x)
+    // const handleOnMouseMove = e => {
+    //     const { currentTarget: target } = e
 
-        target.style.setProperty("--mouse-x", `${x}px`)
-        target.style.setProperty("--mouse-y", `${y}px`)
-        console.log(target.style)
-    }
+    //     const rect = target.getBoundingClientRect(),
+    //         x = e.clientX - rect.left,
+    //         y = e.clientY - rect.top
+    //         console.log(y, x)
 
-    for(const card of document.querySelectorAll(".CardFront")) {
-        card.onmousemove = e => handleOnMouseMove(e)
-    }
+    //     target.style.setProperty("--mouse-x", `${x}px`)
+    //     target.style.setProperty("--mouse-y", `${y}px`)
+    //     console.log(target.style)
+    // }
 
-    function handleResults() {
-        setChosenWhiteCard(cardContent)
-        handleShowResults()
-        // remove card from cards array in PlayerHand
-    }
+    // for(const card of document.querySelectorAll(".CardFront")) {
+    //     card.onmousemove = e => handleOnMouseMove(e)
+    // }
+
+    // function handleResults() {
+    //     setChosenWhiteCard(cardContent)
+    //     handleShowResults()
+    //     // remove card from cards array in PlayerHand
+    // }
+
+    const cursorStyle = draggable ? (isDragging ? 'grabbing' : 'grab') : 'auto'
 
     return (
-        <div className={`Card ${isExploded ? 'card-explosion' : ''}`} onClick={handleResults} draggable={draggable ? 'true' : 'false'}>
+        <div 
+            className={`Card ${isExploded ? 'card-explosion' : ''}`}
+            style={{ cursor: cursorStyle }}
+            ref={draggable ? drag : null}
+        >
             <div className='card-border'></div>
             <div 
                 className='card-content'
@@ -40,5 +55,3 @@ export default function Card({ cardContent, color, handleShowResults, setChosenW
         </div>
     )
 } 
-
-// Make it so black card does not have hover animations!

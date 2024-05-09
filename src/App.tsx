@@ -6,8 +6,10 @@ import Game from './pages/Game/Game'
 import GameLobby from './pages/GameLobby/GameLobby'
 import Navigation from './components/Navigation/Navigation'
 import * as cahTypes from './utilities/cah-types'
-import './App.css'
 import CurrentGames from './pages/CurrentGames/CurrentGames'
+import { DndProvider } from 'react-dnd'
+import { HTML5Backend } from 'react-dnd-html5-backend'
+import './App.css'
 
 // const socket = new WebSocket("ws://127.0.0.1:3030")
 const socket = new WebSocket("ws://127.0.0.1:3030/chat")
@@ -62,33 +64,33 @@ function App() {
       const message = event.data;
       if (isJsonString(message)) {
           // Handle JSON message
-          const jsonMessage = JSON.parse(message);
+          const jsonMessage = JSON.parse(message)
           // Your JSON message handling logic here
       } else {
           // Handle text message
           // Your text message handling logic here
-          console.log("Received text message:", message);
+          console.log("Received text message:", message)
       }
   }
   
   function isJsonString(str) {
       try {
-          JSON.parse(str);
+          JSON.parse(str)
       } catch (e) {
           return false;
       }
-      return true;
+      return true
   }
   
   
-    socket.addEventListener("message", handleMessage);
-    console.log('I am running!');
-  }, []);
+    socket.addEventListener("message", handleMessage)
+    console.log('I am running!')
+  }, [])
   
   
 
   return (
-    <>
+    <DndProvider backend={HTML5Backend}>
       <div className='App'>
         <nav>
           <Navigation />
@@ -130,7 +132,7 @@ function App() {
           </Routes>
         </main>
       </div>
-    </>
+    </DndProvider>
   );
 }
 

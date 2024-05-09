@@ -1,9 +1,18 @@
 import { useState } from 'react'
 import Card from '../Card/Card'
+import { useDrop } from 'react-dnd'
 import './GameTable.css'
 
-export default function GameTable({ tableView, setTableView, currentPlayers, draggingCard }) {
+export default function GameTable({ tableView, setTableView, currentPlayers, draggingCard, dropDiv, setDropDiv, addCardToDropDiv }) {
     const [playerChoicActive, setPlayerChoiceActive] = useState(false)
+
+    const [{ isOver }, drop] = useDrop(() => ({
+        accept: 'card',
+        drop: (item) => addCardToDropDiv(item.id),
+        collect: (monitor) => ({
+            isOver: !!monitor.isOver()
+        })
+    }))
 
     function handleTableViewChange(newView) {
         setTableView(newView)
@@ -24,7 +33,16 @@ export default function GameTable({ tableView, setTableView, currentPlayers, dra
                     <div className='PlayerChoice'>
                         <Card cardContent={"Black Card"} />
                         <Card cardContent={"Space For Player's Chosen  White Card"} />
-                        <AddCard />
+                        <div className='card-drop'>
+                            {dropDiv.map((card) => {
+                                <Card 
+                                    key={card.index}
+                                    id={card.index} 
+                                    cardContent={card.cardContent}
+                                    draggable={card.draggable}
+                                />
+                            })}
+                        </div>
                     </div>
                 )}
                 {tableView === 'hostChoice' && (

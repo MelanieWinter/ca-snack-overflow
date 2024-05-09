@@ -1,51 +1,31 @@
 import Card from '../Card/Card'
 import './PlayerViewHand.css'
 
-export default function PlayerViewHand({ tableView, draggingCard, setDraggingCard }) {
-    
+export default function PlayerViewHand({ tableView, draggingCard, setDraggingCard, dropDiv, setDropDiv }) {
+    const cardContents = [
+        'Something wild',
+        'Something crazy',
+        'Something disturbing',
+        'Something dangerous',
+        'Something ridiculous',
+        'Something confusing',
+        'Something funny',
+        'Something entertaining',
+        'Something silly',
+        'Something else'
+    ]
+
     return (
         <div className='PlayerViewHand'>
             <div className='player-view-hand-container'>
-                <Card 
-                    cardContent={'Something wild'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something crazy'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something disturbing'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something dangerous'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something ridiculous'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something confusing'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something funny'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something entertaining'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something silly'} 
-                    draggable={true} 
-                />
-                <Card 
-                    cardContent={'Something else'} 
-                    draggable={true} 
-                />
+                {cardContents.map((content, index) => (
+                    <Card
+                        key={index}
+                        id={index + 1} 
+                        cardContent={content}
+                        draggable={true}
+                    />
+                ))}
             </div>
         </div>
     )

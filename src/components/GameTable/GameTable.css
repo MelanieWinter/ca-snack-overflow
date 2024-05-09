@@ -55,3 +55,14 @@
     display: flex;
     gap: 1.5rem;
 }
+
+.GameTable .PlayerChoice .card-drop {
+    width: 10rem;
+    height: 15rem;
+    background-color: rgba(121, 208, 77, 0.3);
+    border-radius: 15px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
